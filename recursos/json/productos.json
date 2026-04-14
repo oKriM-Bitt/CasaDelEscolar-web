@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nombre": "Agenda escolar",
+    "descripcion": "Agenda práctica con diseño moderno, ideal para organizar tus tareas.",
+    "precio": 3500,
+    "imagen": "./recursos/productos/agenda.webp",
+    "categoria": "papeleria"
+  },
+  {
+    "id": 2,
+    "nombre": "Hojas sueltas",
+    "descripcion": "Paquete de 100 hojas rayadas A4 de alta calidad.",
+    "precio": 1200,
+    "imagen": "./recursos/productos/hojas_sueltas.webp",
+    "categoria": "papeleria"
+  },
+  {
+    "id": 3,
+    "nombre": "Carpetas",
+    "descripcion": "Carpetas plásticas reforzadas con anillos, varios colores.",
+    "precio": 2800,
+    "imagen": "./recursos/productos/carpetas.webp",
+    "categoria": "papeleria"
+  },
+  {
+    "id": 4,
+    "nombre": "Lapiceras",
+    "descripcion": "Set de 3 lapiceras de tinta azul, suave y de secado rápido.",
+    "precio": 1000,
+    "imagen": "./recursos/productos/lapiceras.webp",
+    "categoria": "escritura"
+  },
+  {
+    "id": 5,
+    "nombre": "Lápices",
+    "descripcion": "Lápices de grafito HB con goma, perfectos para escribir o dibujar.",
+    "precio": 800,
+    "imagen": "./recursos/productos/lapices.webp",
+    "categoria": "escritura"
+  },
+  {
+    "id": 6,
+    "nombre": "Marcadores",
+    "descripcion": "Pack de 7 resaltadores, ideales para estudio y oficina.",
+    "precio": 2200,
+    "imagen": "./recursos/productos/marcadores.webp",
+    "categoria": "escritura"
+  },
+  {
+    "id": 7,
+    "nombre": "Cartuchera",
+    "descripcion": "Cartuchera amplia con cierre reforzado.",
+    "precio": 2500,
+    "imagen": "./recursos/productos/cartuchera.webp",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 8,
+    "nombre": "Kit Geometría",
+    "descripcion": "Kit completo con regla, tijera y goma.",
+    "precio": 1700,
+    "imagen": "./recursos/productos/kit.webp",
+    "categoria": "accesorios"
+  },
+  {
+    "id": 9,
+    "nombre": "Mochila escolar",
+    "descripcion": "Mochila resistente con múltiples compartimentos.",
+    "precio": 7500,
+    "imagen": "./recursos/productos/mochila.webp",
+    "categoria": "accesorios"
+  }
+]

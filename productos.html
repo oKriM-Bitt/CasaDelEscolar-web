@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - La Casa del Escolar</title>
+    
+    <link href="https://api.fontshare.com/v2/css?f[]=erode@400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./recursos/css/styles.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="./recursos/appjs/main.js" type="module"></script>
+</head>
+<body>
+
+    <header class="encabezado-principal">
+        <div class="logo">
+            <a href="./index.html"><img src="recursos/Logo.jpg" alt="Logo"></a>
+            <a href="./index.html"><span>La Casa Del Escolar</span></a>
+        </div>
+
+        <button class="btn-menu" id="btnMenu" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="menu-colapsable" id="menuColapsable">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html" class="activo">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <search>
+                <form action="#" class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                    <button type="submit">🔍</button>
+                </form>
+            </search>
+            
+            <div class="btn-cart" id="carrito">
+                <button type="button"><i class="fa-solid fa-cart-shopping icon-cart"></i></button>
+                <span id="cartCount">0</span>
+                
+                <div class="cart">
+                    <div class="cart-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Img</th>
+                                    <th>Prod</th>
+                                    <th>$</th>
+                                    <th>Cant</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="contentProducts">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="total">
+                                        <h4>Total: <span id="total">$0.00</span></h4>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table> 
+                        <button type="button" id="emptyCart">Vaciar Carrito</button>
+                        <button type="button" id="sendWhatsApp">Enviar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="cuerpo-principal">
+        <section class="hero" style="min-height: 40vh;"> 
+            <img src="./recursos/hero.webp" alt="Imagen principal productos" /> 
+            <h1>Nuestros Productos</h1>
+            <p>Cuadernos, papelería y material artístico con envío rápido.</p>
+        </section>
+
+        <section id="papeleria" class="categoria">
+            <h2>Papelería</h2>
+            <div class="product-list" id="lista-papeleria"></div>
+        </section>
+
+        <section id="escritura" class="categoria">
+            <h2>Escritura</h2>
+            <div class="product-list" id="lista-escritura"></div>
+        </section>
+
+        <section id="accesorios" class="categoria">
+            <h2>Accesorios Escolares</h2>
+            <div class="product-list" id="lista-accesorios"></div>
+        </section>
+    </main>
+
+    <footer class="pie-principal">
+       <div>
+            <a href="./index.html"><img src="./recursos/Logo.jpg" alt="Logo"></a>
+            <p>La Casa Del Escolar</p>
+            <p>Síguenos en <a href="#">Instagram</a></p>
+        </div>
+        <div>
+            <address>
+                 <ul>
+                    <li>Contáctanos</li>
+                    <li>Tel: +54 3572-543900</li>
+                    <li>Olta, La Rioja</li>
+                </ul>
+             </address>
+        </div>
+    </footer>
+
+   
+</body>
+</html>

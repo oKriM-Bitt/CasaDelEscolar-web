@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Casa del Escolar</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=erode@400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./recursos/css/styles.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+    <script src="./recursos/appjs/main.js" type="module"></script>
+</head>
+<body>
+
+    <header class="encabezado-principal">
+        <div class="logo">
+            <a href="./index.html"><img src="recursos/Logo.jpg" alt="Logo"></a>
+            <a href="./index.html"><span>La Casa Del Escolar</span></a>
+        </div>
+
+        <button class="btn-menu" id="btnMenu" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="menu-colapsable" id="menuColapsable">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <search>
+                <form action="#" class="search-bar">
+                    <input type="text" placeholder="Buscar...">
+                    <button type="submit">🔍</button>
+                </form>
+            </search>
+            
+            <div class="btn-cart" id="carrito">
+                <button type="button"><i class="fa-solid fa-cart-shopping icon-cart"></i></button>
+                <span id="cartCount">0</span>
+                
+                <div class="cart">
+                    <div class="cart-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Img</th>
+                                    <th>Prod</th>
+                                    <th>$</th>
+                                    <th>Cant</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="contentProducts">
+                                </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5" class="total">
+                                        <h4>Total: <span id="total">$0.00</span></h4>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table> 
+                        <button type="button" id="emptyCart">Vaciar Carrito</button>
+                        <button type="button" id="sendWhatsApp">Enviar por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="cuerpo-principal">
+        <section class="hero">
+            <img src="./recursos/hero.webp" alt="Imagen principal" />
+            <h1>Todo para la escuela en un solo lugar</h1>
+            <p>Pensado para estudiantes, docentes y familias.</p>
+        </section>
+
+        <section class="novedades">
+            <h2>Novedades</h2>
+             <div class="grid">
+                <img src="./recursos/productos/inicio.novedad1.webp" alt="Novedad 1">
+                <img src="./recursos/productos/inicio.novedad2.webp" alt="Novedad 2"> 
+                <img src="./recursos/productos/inicio.novedad3.webp" alt="Novedad 3">
+                <img src="./recursos/productos/inicio.novedad4.webp" alt="Novedad 4">
+            </div>
+         </section>
+
+        <section class="productos">
+            <h2>Nuestros productos</h2>
+            <div class="grid">
+                <div class="product">
+                    <a href="./productos.html#accesorios">
+                         <img src="recursos/productos/categoria.accesoriosescolares.webp" alt="Accesorios">
+                        <h4>Accesorios escolares</h4>
+                    </a>
+                </div>
+                <div class="product">
+                     <a href="./productos.html#papeleria">
+                        <img src="./recursos/productos/categoria.papeleria.webp" alt="Papelería">
+                        <h4>Papelería</h4>
+                    </a>
+                </div>
+                 <div class="product">
+                    <a href="./productos.html#escritura">
+                        <img src="./recursos/productos/categoria.escritura.webp" alt="Escritura">
+                        <h4>Escritura</h4>
+                    </a>
+                 </div>
+            </div> 
+        </section>
+
+        <section class="marcas">
+            <h2>Marcas</h2>
+            <div class="grid">
+                <img src="./recursos/marcas/sabonis.webp" alt="Sabonis">
+                <img src="./recursos/marcas/exito.webp" alt="Éxito">
+                <img src="./recursos/marcas/papermate.webp" alt="Paper Mate">
+                <img src="./recursos/marcas/pizzini.webp" alt="Pizzini">
+                <img src="./recursos/marcas/bic.webp" alt="Bic">
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie-principal">
+       <div>
+            <a href="./index.html"><img src="./recursos/Logo.jpg" alt="Logo"></a>
+            <p>La Casa Del Escolar</p>
+            <p>Síguenos en <a href="#">Instagram</a></p>
+        </div>
+        <div>
+            <address>
+                 <ul>
+                    <li>Contáctanos</li>
+                    <li>Tel: +54 3572-543900</li>
+                    <li>Olta, La Rioja</li>
+                </ul>
+             </address>
+        </div>
+    </footer>
+
+   
+</body>
+</html>

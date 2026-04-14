@@ -1,0 +1,738 @@
+/* --- Variables y Globales --- */
+:root {
+    --color-primario: #0A3832; /* Verde oscuro */
+    --color-texto-claro: #FFFFFF;
+    --color-texto-oscuro: #333333;
+    --color-fondo: #FFFFFF;
+    --color-acento: #ffcc00; /* Amarillo para links activos */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-texto-oscuro);
+    background-color: var(--color-fondo);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Erode', serif;
+    font-weight: 600;
+}
+
+/* --- HEADER (FUSIÓN: Estructura TP4 + Grosor Final) --- */
+.encabezado-principal {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* AQUÍ ESTÁ EL CAMBIO: Padding más grueso como pediste */
+    padding: 1.5rem 2rem; 
+}
+
+.encabezado-principal .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; 
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.encabezado-principal .logo img {
+    max-height: 50px; /* Logo un poco más grande */
+    border-radius: 4px;
+}
+
+/* Menú Colapsable (Desktop por defecto) */
+.menu-colapsable {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-colapsable nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-colapsable ul a {
+    color: var(--color-texto-claro);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.menu-colapsable ul a:hover,
+.menu-colapsable ul a.activo {
+    color: var(--color-acento);
+}
+
+.menu-colapsable ul a.activo {
+    text-decoration: underline;
+}
+
+/* Botón Hamburguesa (Oculto en Desktop) */
+.btn-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-texto-claro);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    color: var(--color-texto-claro);
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #ccc;
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-texto-claro);
+}
+
+
+/* --- CARRITO DE COMPRAS --- */
+.btn-cart { 
+    position: relative;
+}
+.btn-cart button { 
+    background: none; 
+    border: none; 
+    cursor: pointer;
+}
+.btn-cart .icon-cart { 
+    font-size: 1.6rem; 
+    color: var(--color-texto-claro); 
+    transition: color 0.3s;
+}
+.btn-cart .icon-cart:hover { 
+    color: var(--color-acento); 
+}
+#cartCount {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #e63946; /* Rojo */
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Dropdown del Carrito */
+.cart {
+    display: none; 
+    position: absolute;
+    top: 150%; /* Ajustado para el header grueso */
+    right: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-oscuro);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 450px; /* Ancho cómodo para desktop */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 101; 
+    padding: 10px;
+}
+.cart.active { 
+    display: block; 
+}
+.cart table { 
+    width: 100%;
+    border-collapse: collapse; 
+    font-size: 0.9rem;
+}
+.cart th, .cart td { 
+    padding: 0.5rem; 
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.cart tfoot { 
+    font-weight: bold; 
+}
+.cart img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Botones dentro del carrito */
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #e63946;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+#emptyCart, #sendWhatsApp {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+#emptyCart { background-color: #e63946; }
+#sendWhatsApp { background-color: #25D366; }
+
+
+/* --- SECCIONES HERO (Restauradas del TP4) --- */
+.hero {
+    position: relative;
+    color: var(--color-texto-claro);
+    min-height: 70vh; /* Altura grande original */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 5%;
+    text-align: left;
+    overflow: hidden;
+}
+
+.hero > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.6);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+/* Hero para Contacto (Restaurado) */
+#hero-contacto {
+    position: relative;
+    color: var(--color-texto-claro);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 5%;
+    text-align: left;
+    overflow: hidden;
+}
+#hero-contacto > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.6);
+}
+#hero-contacto h1 { font-size: 3rem; margin-bottom: 1rem; }
+#hero-contacto p { font-size: 1.1rem; }
+
+
+/* --- GRILLAS Y SECCIONES --- */
+.novedades, .productos, .marcas {
+    padding: 4rem 5%;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* --- Secciones de contenido --- */
+.cuerpo-principal .novedades,
+.cuerpo-principal .productos,
+.cuerpo-principal .marcas {
+    padding: 3rem 1.5rem;
+}
+
+.cuerpo-principal .grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* --- SECCIÓN: NOVEDADES (Homepage) --- */
+.novedades { 
+    padding: 4rem 10%; 
+    text-align: center; 
+}
+
+.novedades h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+    text-align: center; /* Centrado */
+    width: 100%;
+}
+
+.novedades .grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1.5rem; 
+}
+
+.novedades img { 
+    width: 100%; 
+    border-radius: 10px; 
+    transition: transform 0.3s; 
+}
+
+.novedades img:hover { 
+    transform: scale(1.05); 
+}
+
+/* --- SECCIÓN: NUESTROS PRODUCTOS (HOMEPAGE) --- */
+.productos h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+    text-align: center; /* Centrado */
+    width: 100%;
+}
+
+.cuerpo-principal .productos .grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.cuerpo-principal .product { /* Este es para el Home */
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cuerpo-principal .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cuerpo-principal .product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cuerpo-principal .product h4 {
+    font-size: 1.5rem; 
+    margin: 12px;
+    color: #333;
+    text-align: center;
+}
+
+/* --- Marcas --- */
+
+.marcas h2{ 
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+    text-align: center; /* Centrado */
+    width: 100%;
+}
+
+.cuerpo-principal .marcas .grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    align-items: center;
+}
+
+.cuerpo-principal .marcas img {
+    width: 100px;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+.cuerpo-principal .marcas img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Categorías (página Productos) --- */
+.cuerpo-principal .categoria {
+    padding: 3rem 1.5rem;
+}
+
+.cuerpo-principal .categoria h2 {
+    color: var(--color-primario);
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.cuerpo-principal .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* --- PÁGINA PRODUCTOS (Estilos avanzados con Inputs) --- */
+.categoria {
+    padding: 3rem 5%;
+}
+.categoria h2 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 2rem;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Tarjeta de Producto Individual */
+.producto {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center; /* Centrado para el diseño nuevo */
+    width: 280px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.producto:hover { transform: translateY(-5px); }
+
+.producto img {
+    width: 100%;
+    height: 180px; 
+    object-fit: contain; /* Para que se vean bien los útiles */
+    margin-bottom: 10px;
+}
+.producto h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.producto p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+.producto .precio {
+    font-weight: bold;
+    color: var(--color-primario);
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* NUEVO: Controles de cantidad y botón */
+.product-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.input-cantidad {
+    width: 60px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.btn-agregar {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+.btn-agregar:hover { background-color: #072a25; }
+
+
+/* --- FORMULARIO DE CONTACTO (Restaurado del Estilo Verde) --- */
+#formulario {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    padding: 4rem 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    border-top: 50px solid #ffffff;
+}
+.formulario-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+.formulario-info label {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    opacity: 0.9;
+}
+.formulario-info input,
+.formulario-info textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 10px 0;
+    color: var(--color-texto-claro);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.formulario-info input:focus, .formulario-info textarea:focus {
+    border-bottom-color: #fff;
+}
+.formulario-info button {
+    background-color: white;
+    color: var(--color-primario);
+    border: none;
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: transform 0.3s;
+}
+.formulario-info button:hover { transform: translateY(-2px); }
+.formulario-imagen img {
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* --- ESTILOS FOOTER --- */
+.pie-principal {
+    background-color: #0A3832; /* Verde Oscuro */
+    color: #ffffff;
+    padding: 4rem 10%;
+    display: flex;
+    justify-content: space-between; /* Extremos separados */
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-top: 50px solid #ffffff; /* <--- ESTO ES EL RECTÁNGULO BLANCO */
+}
+
+/* Columna Izquierda: Logo y Redes */
+.pie-principal div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pie-principal img {
+    width: 80px;
+    background-color: #ffffff; /* Fondo blanco para el logo */
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.pie-principal a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Columna Derecha: Contacto */
+.pie-principal address {
+    font-style: normal;
+    text-align: right; /* Alinea el bloque a la derecha */
+}
+
+.pie-principal ul {
+    list-style: none; /* Sin puntitos */
+    padding-left: 20px;
+    margin: 0;
+    text-align: left; /* El texto se lee de izq a der */
+    display: inline-block; 
+}
+
+.pie-principal li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ==============================================
+   MEDIA QUERIES (RESPONSIVIDAD TOTAL)
+   ============================================== */
+
+/* --- MÓVIL (Pantallas hasta 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste del Header para que no se rompa */
+    .encabezado-principal {
+        padding: 1rem; /* Menos padding en móvil */
+        flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+    }
+
+    /* 2. Menú Colapsable: Oculto por defecto y vertical */
+    .menu-colapsable {
+        display: none; /* Oculto inicialmente */
+        width: 100%;   /* Ocupa todo el ancho */
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 1rem;
+        background-color: var(--color-primario);
+        padding: 1rem;
+        position: absolute; /* Para que flote sobre el contenido */
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Clase para mostrar el menú cuando se hace click en el botón hamburguesa */
+    .menu-colapsable.activo {
+        display: flex;
+    }
+
+    /* 3. Botón Hamburguesa: Visible en móvil */
+    .btn-menu {
+        display: block;
+    }
+
+    /* 4. CARRITO EN MÓVIL: Ajuste crítico */
+    /* Esto es lo que arregla que no se vea el carrito */
+    .cart {
+        position: fixed; /* Fijo en la pantalla para que siempre se vea */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Centrado perfecto */
+        width: 90vw; /* 90% del ancho de la pantalla */
+        max-width: 350px;
+        max-height: 80vh; /* Máximo 80% del alto */
+        overflow-y: auto; /* Scroll si es muy largo */
+        z-index: 2000; /* Por encima de todo */
+    }
+}
+
+
+/* --- ESCRITORIO (Pantallas desde 769px en adelante) --- */
+@media (min-width: 769px) {
+
+    /* Ocultamos botón hamburguesa */
+    .btn-menu { display: none; }
+
+    /* Menú normal horizontal */
+    .menu-colapsable {
+        display: flex !important;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        box-shadow: none;
+        padding: 0;
+        width: auto;
+    }
+
+    /* Header con padding original */
+    .encabezado-principal {
+        padding: 1.5rem 2rem;
+    }
+
+    /* AQUÍ ESTÁ LA SOLUCIÓN: GRILLA DE 3 COLUMNAS */
+    .cuerpo-principal .productos .grid {
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 2rem;
+    }
+
+    /* Novedades (4 columnas) */
+    .novedades .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Footer Horizontal */
+    .pie-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    /* Formulario a 2 columnas */
+    #formulario {
+        grid-template-columns: 1fr 1fr;
+    }
+    .formulario-imagen { display: block; }
+}
+
+/* FLOREEE*/
+
+.emoji-cayendo {
+    position: fixed;
+    top: -50px; 
+    font-size: 1.5rem;
+    z-index: 9999;
+    pointer-events: none; 
+    opacity: 0.6; 
+    animation: caer linear forwards;
+
+
+
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(110vh) rotate(360deg); 
+    }
+}
