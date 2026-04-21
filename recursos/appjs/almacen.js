@@ -2,7 +2,7 @@
 const CARRITO_STORAGE_KEY = 'la-casa-del-escolar-carrito';
 // const PRODUCTOS_URL = "./recursos/json/productos.json"; // Ruta al JSON
 // mockapi
-const PRODUCTOS_URL = "https://69deafb5d6de26e11928224d.mockapi.io/productos"; // Tu enlace de MockAPI
+const PRODUCTOS_URL = '/api/productos'; // Tu enlace de MockAPI
 
 // --- Lógica de Persistencia ---
 function cargarCarrito() {

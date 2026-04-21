@@ -1,0 +1,21 @@
+{
+  "name": "casadelescolar-web-main",
+  "version": "1.0.0",
+  "description": "Servidor web para La Casa del Escolar",
+  "main": "app.js", 
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "type": "module"
+}
+
