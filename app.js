@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Servir archivos estáticos (HTML, CSS, imágenes, JS del frontend)
 // Le decimos a Express que la carpeta raíz del proyecto es pública
-app.use(express.static("."));
+app.use(express.static("front"));
 
 // Rutas de la API
 app.use("/api/productos", productosRouter);
