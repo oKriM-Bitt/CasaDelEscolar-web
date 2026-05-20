@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - La Casa del Escolar</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=erode@400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./recursos/css/styles.css">
+    <script src="./recursos/appjs/adminP.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="admin-body">
+
+    <header class="encabezado-principal">
+        <div class="logo">
+            <a href="./index.html"><img src="recursos/Logo.jpg" alt="Logo"></a>
+            <span>Panel de Administración</span>
+        </div>
+        <nav class="menu-admin">
+            <a href="administracionU.html" class="activo">Productos</a>
+            <a href="index.html">Volver a Tienda</a>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        <div class="admin-header">
+            <h1>Gestión de Inventario</h1>
+            <button class="btn-agregar-admin" id="btnNuevoProducto">
+                <i class="fa-solid fa-plus"></i> Nuevo Producto
+            </button>
+        </div>
+
+        <div class="admin-table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Sucursal</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="adminContentProducts">
+                    <tr>
+                        <td>#1042</td>
+                        <td><div class="img-placeholder"><i class="fa-solid fa-image"></i></div></td>
+                        <td>Cuaderno Universitario Éxito Rayado</td>
+                        <td>Papelería</td>
+                        <td>Casa Central</td>
+                        <td><span class="badge-stock alert">5</span></td>
+                        <td>$3.500,00</td>
+                        <td class="acciones-td">
+                            <button class="btn-icon edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="btn-icon delete" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1043</td>
+                        <td><div class="img-placeholder"><i class="fa-solid fa-image"></i></div></td>
+                        <td>Bolígrafo Bic Trazo Fino Azul</td>
+                        <td>Escritura</td>
+                        <td>Sucursal Sur</td>
+                        <td><span class="badge-stock normal">120</span></td>
+                        <td>$800,00</td>
+                        <td class="acciones-td">
+                            <button class="btn-icon edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                            <button class="btn-icon delete" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>

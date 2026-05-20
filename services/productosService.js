@@ -1,6 +1,6 @@
 // services/productosService.js - Comunicación con la API externa (MockAPI)
 
-const PRODUCTOS_URL = "https://69deafb5d6de26e11928224d.mockapi.io/productos";
+const PRODUCTOS_URL = "https://69deafb5d6de26e11928224d.mockapi.io/api/v1/productos";
 
 async function obtenerProductos() {
     const response = await fetch(PRODUCTOS_URL);
